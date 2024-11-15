@@ -21,6 +21,8 @@ def fork():
             time.sleep(random.random())
 
         print("Made with ♥️. Enjoy! uwu")
+        print("Here is a token of love: JKKNIUCTF{wE_4RE_HackER$_8RO}")
+
     elif os_name == 'Windows':
         user = os.getenv("USERNAME")
         print(f"Hello, {user}!")
